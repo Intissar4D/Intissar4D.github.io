@@ -24,17 +24,17 @@
 myConnector.getData = function(table, doneCallback) {
   $.getJSON("http://192.168.1.51:80/rest/INVOICES", function(resp) {
     
-      var result = resp.__ENTITIES,
+      var resu = resp.__ENTITIES,
       
           tableData = [];
           //console.log(result)
       // Iterate over the JSON object
       
-      for (var i = 0, len = result.length; i < len; i++) {
+      for (var i = 0, len = resu.length; i < len; i++) {
       
           tableData.push({
-              "invoiceNum": result[i].Invoice_Number,
-              "total": result[i].Total
+              "invoiceNum": resu[i].Invoice_Number,
+              "total": resu[i].Total
           });
       }
 
