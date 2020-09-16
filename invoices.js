@@ -3,13 +3,13 @@
 
   myConnector.getSchema = function (schemaCallback) {
     var cols = [ {
-      id: "invoiceNum",
+      id: "id",
       alias: "The Invoice Number",
       dataType: tableau.dataTypeEnum.string
   }, {
-      id: "total",
+      id: "mag",
       alias: "The Invoice Total",
-      dataType: tableau.dataTypeEnum.int
+      dataType: tableau.dataTypeEnum.float
   }];
 
   var tableSchema = {
@@ -22,9 +22,9 @@
 };
 
 myConnector.getData = function(table, doneCallback) {
-  $.getJSON("http://192.168.1.51:80/rest/INVOICES", function(resp) {
+  $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
     
-      var resu = resp.__ENTITIES,
+      var resu = resp.features,
       
           tableData = [];
           //console.log(result)
@@ -33,8 +33,8 @@ myConnector.getData = function(table, doneCallback) {
       for (var i = 0, len = resu.length; i < len; i++) {
       
           tableData.push({
-              "invoiceNum": resu[i].Invoice_Number,
-              "total": resu[i].Total
+              "invoiceNum": resu[i].id,
+              "total": resu[i].properties.mag
           });
       }
 
