@@ -27,7 +27,7 @@ myConnector.getData = function(table, doneCallback) {
       var result = resp.__ENTITIES,
       
           tableData = [];
-          console.log(result)
+          //console.log(result)
       // Iterate over the JSON object
       
       for (var i = 0, len = result.length; i < len; i++) {
