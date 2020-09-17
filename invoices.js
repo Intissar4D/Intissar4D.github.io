@@ -57,8 +57,6 @@ myConnector.getData = function(table, doneCallback) {
        
     });
 });
-<<<<<<< HEAD
+
 })();
-=======
-})();
->>>>>>> 3b5a2d3fce7368f8dbd73d4e9d6e7752952ef1be
+
