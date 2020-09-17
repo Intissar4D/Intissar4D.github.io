@@ -22,7 +22,7 @@
 };
 
 myConnector.getData = function(table, doneCallback) {
-  $.getJSON("http://192.168.1.51:80/rest/INVOICES", function(resp) {
+  $.getJSON("https://192.168.1.51:443/rest/INVOICES", function(resp) {
     
       var result = resp.__ENTITIES,
       
