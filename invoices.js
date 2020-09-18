@@ -23,7 +23,7 @@
 
 myConnector.getData = function(table, doneCallback) {
 
-  $.getJSON("https://192.168.1.51:443/rest/INVOICES", function(resp) {
+  $.getJSON("https://d02893fc4883.ngrok.io/rest/INVOICES", function(resp) {
 
     
       var result = resp.__ENTITIES,
